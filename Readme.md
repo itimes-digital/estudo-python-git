@@ -1,3 +1,3 @@
-Estudos de Python
+Estudos de Python!
 
-Haverá diversos arquivos de estudo e teste de python.
+Haverá diversos arquivos de estudo, teste de python e implementação de alguns algoritmos.
