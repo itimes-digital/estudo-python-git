@@ -116,8 +116,54 @@ deuses_mitologicos.reverse()
 print("\nDeuses Mitológicos em ordem inversa: " + str(deuses_mitologicos))
 print("tamanho da lista eh " + str(len(deuses_mitologicos)))
 
+#===========================//===================================
+squares = [value**2 for value in range(1,11)]
+print(squares)#itera o range que é de 1 até 10 e eleva ao quadrado cada valor da iteração
 
+squares = []
+for value in range(1, 11):
+	square = value**3
+	squares.append(square)
 
+print("\nResultado : " + str(squares))
 
+print(list(range(8,11,2)))
+# ** Dois asteriscos representam exponenciais, portanto, 3**2 = 9
+print(3**2)
 
+for value in range(1, 21):
+	print(str(value) + " ao qudrado eh : " + str(value ** 2))
+	
+milhao = list(range(1, 1000001))
+valorMin = min(milhao)
+valorMax = max(milhao)
+print(valorMin)
+print(valorMax)
+print("Valor total : " + str(sum(milhao)))
 
+print("\n")
+
+#Para número par ou ímpar, sempre o terceiro parâmetro é 2
+for value in range(1, 21, 2):
+	print(str(value) + " ao qudrado eh : " + str(value ** 2))
+	
+print("\n")	
+
+for value in range(3, 31, 3):
+	print(str(value) + " ao qudrado eh : " + str(value ** 3))
+	
+valor = [value**2 for value in range(1, 11)]
+print("\nResultado da lista via comprehension : " + str(valor))
+
+print("Cópia de lista [:]: " + str(valor[:]))
+
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print("\n" + str(players))
+
+print("\n[3:]")
+for player in players[3:]:
+	print(player.title())
+	
+print("\n[:3]")
+for player in players[:3]:
+	print(player.title())
