@@ -57,6 +57,31 @@ print("palavra sem espaco esquerdo (lstrip()): " + new_word.lstrip())
 message = "One of Python's strengths is its diverse community."
 print(message)
 
+texto = "Isto é apenas um teste para python!"
+print(texto)
+print(len(texto))
+
+texto = texto.replace('apenas', '')
+print(texto)
+
+print("Existem " + str(texto.count('e')) + " letras 'e'.")
+
+encontrado = texto.find('m')
+print("Encontrado a posição da letra m : " + str(encontrado))
+print(texto[encontrado])
+
+array_texto = texto.split()
+print(array_texto)
+
+#Apenas a primeira letra maiúscula
+print("\nApenas a primeira letra maiúscula")
+print(texto.lower().capitalize())
+
+
+
+
+
+
 
 
 
