@@ -43,3 +43,17 @@ restaurant3.update_count_clients(50)
 restaurant3.count_clients()
 restaurant3.update_count_clients(5)
 restaurant3.count_clients()
+
+class IceCreamStand(Restaurants):
+	"""Classe filha ou subclasse de restaurantes"""
+	def __init__(self):
+		super()
+		self.flavors = ['chocolate', 'morango', 'abacaxi', 'creme']
+		
+	def show_flavors(self):
+		print("Em nossa sorveteria temos esses sabores : " + str(self.flavors))
+	
+ice = IceCreamStand()
+ice.show_flavors()
+
+

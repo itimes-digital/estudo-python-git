@@ -57,3 +57,23 @@ login_realizado = 0
 user3.show_login_attempts()
 user3.reset_login_attempts()
 user3.show_login_attempts()
+
+class Privileges():
+	"""Classe com o objetivo de gerenciar os privilégios dos usuários"""
+	
+	def __init__(self):
+		self.privileges = ['can add post', 'can dele post', 'can ban user']
+		
+	def show_privileges(self):
+		print("O perfil administrador têm esses privilégios : " + str(self.privileges))
+	
+
+
+class Admin(User):
+	"""Classe filha de User"""
+	
+	def __init__(self):
+		self.privileges = Privileges()
+		
+ad = Admin()
+ad.privileges.show_privileges()
