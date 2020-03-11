@@ -40,5 +40,5 @@ if birthday in unique_lines:
 	print("Your birthday appers in the first million of pi!")
 else:
 	print("Your birthday does not appear in the first million digits of pi.")
-
+	
 
