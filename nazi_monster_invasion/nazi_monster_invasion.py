@@ -2,7 +2,6 @@
 
 from settings import Settings
 from ship import Ship
-from character import Character
 import game_functions as gf
 
 import pygame #módulo
@@ -16,10 +15,12 @@ def run_game():
 	screen = pygame.display.set_mode((settings.screen_width, settings.screen_height))
 	pygame.display.set_caption("Alien Invasion")
 	ship = Ship(settings, screen)
-	character = Character(screen)
-	
+	#character = Character(settings, screen)
+	nazi = Group()
 	bullets = Group()
 	
+	#Cria uma frota de vilões
+	gf.create_fleet(settings, screen, ship, nazi)
 	
 	#Inicia o laço principal do jogo
 	while True:
@@ -30,7 +31,7 @@ def run_game():
 		gf.update_bullets(bullets)
 		gf.draw_screen(screen, settings)
 		gf.update_screen_ship(ship, bullets)
-		gf.update_screen_character(character)
+		gf.update_screen_character(nazi, screen)
 		
 
 				

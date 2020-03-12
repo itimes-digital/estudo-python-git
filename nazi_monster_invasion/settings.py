@@ -8,7 +8,7 @@ class Settings():
 		#Configurações da tela
 		self.screen_width 				= 1200
 		self.screen_height 				= 600
-		self.bg_color 					= (0, 0, 0)
+		self.bg_color 					= (255, 255, 255)
 		
 		#Configurações da nave
 		self.ship_speed_factor 			= 1.5

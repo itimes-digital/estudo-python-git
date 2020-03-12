@@ -14,6 +14,7 @@ class Ship():
 		
 		#Inicia cada nova espaçonave na parte inferior central da tela
 		self.rect.centerx 	= self.screen_rect.centerx
+		self.rect.centery 	= self.screen_rect.centery
 		self.rect.bottom 	= self.screen_rect.bottom
 		
 		#Flags de movimento
