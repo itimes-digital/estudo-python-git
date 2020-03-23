@@ -40,18 +40,30 @@ class Bullet(Sprite):
 		#Atualiza a posição de rect
 
 		if self.enumKey == None:
-			self.rect.y = self.y
+			self.rect.y 	= self.y
 		
 		if self.enumKey != None and self.enumKey == Key.K_V.value:
-			self.y -= self.speed_factor
-			self.x -= self.speed_factor
-			self.rect.y = self.y
-			self.rect.x = self.x
+			self.y 			-= self.speed_factor
+			self.x 			-= self.speed_factor
+			self.rect.y 	= self.y
+			self.rect.x 	= self.x
 			
 		if self.enumKey != None and self.enumKey == Key.K_B.value:
-			self.y -= self.speed_factor
-			self.x += self.speed_factor
-			self.rect.y = self.y
-			self.rect.x = self.x
+			self.y 			-= self.speed_factor
+			self.x 			+= self.speed_factor
+			self.rect.y 	= self.y
+			self.rect.x 	= self.x
+			
+		if self.enumKey != None and self.enumKey == Key.K_A.value:
+			self.y 			+= self.speed_factor
+			self.x 			-= self.speed_factor
+			self.rect.y 	= self.y
+			self.rect.x 	= self.x
+			
+		if self.enumKey != None and self.enumKey == Key.K_S.value:
+			self.y 			+= self.speed_factor
+			self.x 			+= self.speed_factor
+			self.rect.y 	= self.y
+			self.rect.x 	= self.x
 		
 		self.y = self.rect.y
