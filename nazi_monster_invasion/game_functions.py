@@ -3,10 +3,11 @@ from bullet import Bullet
 from key import Key
 from nazi_monster import Nazi_Monster
 import pygame
+import pygame.mixer
 from random import randint
 from time import sleep
 
-def check_events(settings, screen, ship, bullets):
+def check_events(settings, screen, ship, bullets, sound):
 	"""Responde a eventos de pressionamento de teclas e de mouse"""
 
 	for event in pygame.event.get():
@@ -15,12 +16,12 @@ def check_events(settings, screen, ship, bullets):
 			sys.exit()
 		
 		elif event.type == pygame.KEYDOWN:
-			event_keydown(event, settings, screen, ship, bullets)
+			event_keydown(event, settings, screen, ship, bullets, sound)
 		
 		elif event.type == pygame.KEYUP:
 			event_keyup(event, ship)
 
-def event_keydown(event, settings, screen, ship, bullets):
+def event_keydown(event, settings, screen, ship, bullets, sound):
 	
 	event_current = event.key
 
@@ -42,6 +43,7 @@ def event_keydown(event, settings, screen, ship, bullets):
 	
 	if event_current == pygame.K_SPACE:
 		#Cria um novo projétil e o adiciona ao grupo de projéteis
+		sound.set_song(1, 'sound/zapsplat_cartoon_rocket_launch_missle.mp3')
 		fire_bullet(settings, screen, ship, bullets, None)
 		
 	if event_current == pygame.K_v:#Letra V
@@ -104,7 +106,7 @@ def update_screen_nazi_monster(nazi, screen):
 	#character.blitme()
 	
 	
-def update_bullets(settings, screen, ship, nazis, bullets):
+def update_bullets(settings, screen, ship, nazis, bullets, sound):
 	"""Atualiza a posição dos projéteis e se livra ds projéteis antigos"""
 	#Atualiza as posições dos projéteis
 	bullets.update()
@@ -118,14 +120,16 @@ def update_bullets(settings, screen, ship, nazis, bullets):
 		if bullet.rect.left <= -600:
 			bullets.remove(bullet)
 			
-	check_bullet_nazi_collisions(settings, screen, ship, nazis, bullets)
+	check_bullet_nazi_collisions(settings, screen, ship, nazis, bullets, sound)
 	
-	
-		
-def check_bullet_nazi_collisions(settings, screen, ship, nazis, bullets):
+def check_bullet_nazi_collisions(settings, screen, ship, nazis, bullets, sound):
 	"""Responde a colisões entre projéteis e nazis"""
 	#Remove qualquer projétil e nazi que tenham colidido
+	
 	collisions = pygame.sprite.groupcollide(bullets, nazis, True, True) 
+	
+	if len(collisions) == 0:
+		sound.set_song(2, 'sound/audio_hero_ExplosionSmall_DIGIJ02_24_351.mp3')
 	
 	if len(nazis) == 0:
 		"""Destrói os projéteis existentes e cria uma nova frota"""
@@ -158,7 +162,7 @@ def create_fleet(settings, screen, ship, nazis):
 def get_number_nazis_x(settings, nazi_width):
 	"""Determina o número de nazis que cabem em uma linha"""
 
-	available_space_x 	= settings.screen_width - (randint(0, 2) * nazi_width)
+	available_space_x 	= settings.screen_width - (2 * nazi_width)
 	number_nazis_x 		= int(available_space_x / (2 * nazi_width))
 	return number_nazis_x
 
@@ -167,8 +171,8 @@ def create_nazi(settings, screen, nazis, nazi_number, row_number):
 	nazi 				= Nazi_Monster(settings, screen)
 	nazi_width 			= nazi.rect.width
 	nazi.x 				= nazi_width + (randint(0, 2) * nazi_width * nazi_number)
-	nazi.rect.x 		= nazi.x
-	nazi.rect.y 		= nazi.rect.height + (randint(0, 2) * nazi.rect.height * row_number)
+	nazi.rect.x 		= nazi.x + 10
+	nazi.rect.y 		= nazi.rect.height + (2 * nazi.rect.height * row_number)
 	nazis.add(nazi)
 	
 	

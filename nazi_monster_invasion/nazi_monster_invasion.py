@@ -2,16 +2,30 @@
 
 from settings import Settings
 from ship import Ship
+from sound import Sound
 from game_stats import GameStats
 import game_functions as gf
+from key import Key
 
 import pygame #módulo
 
 from pygame.sprite import Group
 
 def run_game():
+
 	#Inicializa o jogo e cria um objeto para a tela
 	pygame.init()
+	pygame.mixer.init()
+	
+	#Sons no jogo e definição da quantidade de canais
+	sound = Sound(frequency=44100, 
+				size=-16, 
+				channels=8, 
+				buffersize=512, 
+				devicename=None)
+	
+	#Curtir e jogar, apenas isso
+	sound.eternal_song(0, "sound/People Get Up And Drive Your Funky Soul (Remix).mp3")
 	
 	running = True
 	#speed = 60
@@ -19,6 +33,7 @@ def run_game():
 	settings = Settings()
 	screen = pygame.display.set_mode((settings.screen_width, settings.screen_height))
 	pygame.display.set_caption("Nazi Invasion")
+	
 	"""Cria uma instância para armazenar dados estatísticos do jogo"""
 	stats = GameStats(settings)
 	clock = pygame.time.Clock()
@@ -30,7 +45,7 @@ def run_game():
 	
 	#Espaçonave
 	ship = Ship(settings, screen)
-	
+
 	#nazi = Nazi_Monster(settings, screen)
 	nazis = Group()
 	
@@ -44,9 +59,9 @@ def run_game():
 	while running:
 		
 		#Observa eventos de teclado e de mouse
-		gf.check_events(settings, screen, ship, bullets)
-		gf.update_bullets(settings, screen, ship, nazis, bullets)
-		gf.update_nazis(settings, stats, screen, ship, nazis, bullets)
+		gf.check_events(settings, screen, ship, bullets, sound)
+		gf.update_bullets(settings, screen, ship, nazis, bullets, sound)
+		gf.update_nazis(settings, stats, screen, ship, nazis, bullets, sound)
 		gf.draw_screen(screen, settings, background)
 		ship.update(background) #Atualização dos movimentos
 		gf.update_screen_ship(ship, bullets)

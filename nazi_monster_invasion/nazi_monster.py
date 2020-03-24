@@ -1,5 +1,6 @@
 import pygame
 from pygame.sprite import Sprite
+from random import randint
 
 class Nazi_Monster(Sprite):
 	
@@ -10,12 +11,12 @@ class Nazi_Monster(Sprite):
 		self.settings = settings
 		
 		#Carrega a imagem do vilão e obtém seu rect
-		self.image = pygame.image.load('images/nazi_monster_v2.png')
+		self.image = pygame.image.load('images/nazi_monster_v3.png')
 		self.rect = self.image.get_rect()
 		
 		#Inicia cada novo vilão próximo a parte superior esquerda da tela
-		self.rect.x = self.rect.width
-		self.rect.y = self.rect.height
+		self.rect.x = randint(0, self.rect.width)
+		self.rect.y = randint(0, self.rect.height)
 		
 		#Armazena a posição exata do vilão
 		self.x = float(self.rect.x)
