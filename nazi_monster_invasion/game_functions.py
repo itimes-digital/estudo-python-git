@@ -3,25 +3,28 @@ from bullet import Bullet
 from key import Key
 from nazi_monster import Nazi_Monster
 import pygame
-import pygame.mixer
+from pygame import mixer
 from random import randint
 from time import sleep
+import time
 
-def check_events(settings, screen, ship, bullets, sound):
+
+def check_events(settings, screen, ship, bullets):
 	"""Responde a eventos de pressionamento de teclas e de mouse"""
-
 	for event in pygame.event.get():
 		
 		if event.type == pygame.QUIT:
 			sys.exit()
 		
 		elif event.type == pygame.KEYDOWN:
-			event_keydown(event, settings, screen, ship, bullets, sound)
+			event_keydown(event, settings, screen, ship, bullets)
 		
 		elif event.type == pygame.KEYUP:
 			event_keyup(event, ship)
 
-def event_keydown(event, settings, screen, ship, bullets, sound):
+def event_keydown(event, settings, screen, ship, bullets):
+	
+	mixer.init()
 	
 	event_current = event.key
 
@@ -43,23 +46,27 @@ def event_keydown(event, settings, screen, ship, bullets, sound):
 	
 	if event_current == pygame.K_SPACE:
 		#Cria um novo projétil e o adiciona ao grupo de projéteis
-		sound.set_song(1, 'sound/zapsplat_cartoon_rocket_launch_missle.mp3')
+		play_effects('sound/tiro_v2.wav')
 		fire_bullet(settings, screen, ship, bullets, None)
 		
 	if event_current == pygame.K_v:#Letra V
 		#Cria um novo projétil e o adiciona ao grupo de projéteis
+		play_effects('sound/tiro_v2.wav')
 		fire_bullet(settings, screen, ship, bullets, Key.K_V.value)
 
 	if event_current == pygame.K_b:#Letra B
 		#Cria um novo projétil e o adiciona ao grupo de projéteis
+		play_effects('sound/tiro_v2.wav')
 		fire_bullet(settings, screen, ship, bullets, Key.K_B.value)
 		
-	if event_current == pygame.K_a:#Letra L
+	if event_current == pygame.K_a:#Letra A
 		#Cria um novo projétil e o adiciona ao grupo de projéteis
+		play_effects('sound/tiro_v2.wav')
 		fire_bullet(settings, screen, ship, bullets, Key.K_A.value)
 	
-	if event_current == pygame.K_s:#Letra L
+	if event_current == pygame.K_s:#Letra S
 		#Cria um novo projétil e o adiciona ao grupo de projéteis
+		play_effects('sound/tiro_v2.wav')
 		fire_bullet(settings, screen, ship, bullets, Key.K_S.value)
 		
 	if event_current == pygame.K_q:#Letra Q
@@ -80,13 +87,13 @@ def event_keyup(event, ship):
 		ship.moving_bottom = False
 									
 					
-def draw_screen(screen, settings, background):
+def draw_screen(screen, background, x, y):
 	#Redesenha a tela a cada passagem pelo laço
 	#
-	screen.fill(settings.bg_color)
-	screen.blit(background[0], (0,0))
+	#screen.fill(settings.bg_color)
+	screen.blit(background, (x,y))
+	print(str(x) + " - " + str(y))
 	
-
 def update_screen():
 	#Deixa a tela mais recente visível
 	pygame.display.flip()
@@ -99,14 +106,13 @@ def update_screen_ship(ship, bullets):
 		
 	ship.blitme()
 
-
 def update_screen_nazi_monster(nazi, screen):
 	"""Atualiza as imagens na tela e alterna para a nova tela."""
 	nazi.draw(screen)
 	#character.blitme()
 	
 	
-def update_bullets(settings, screen, ship, nazis, bullets, sound):
+def update_bullets(settings, screen, ship, nazis, bullets):
 	"""Atualiza a posição dos projéteis e se livra ds projéteis antigos"""
 	#Atualiza as posições dos projéteis
 	bullets.update()
@@ -115,26 +121,26 @@ def update_bullets(settings, screen, ship, nazis, bullets, sound):
 	for bullet in bullets.copy():
 		if bullet.rect.bottom <= 0:
 			bullets.remove(bullet)
-		if bullet.rect.right >= 1200:
+		if bullet.rect.right >= screen.get_rect().right:
 			bullets.remove(bullet)
-		if bullet.rect.left <= -600:
+		if bullet.rect.left <= screen.get_rect().left:
 			bullets.remove(bullet)
 			
-	check_bullet_nazi_collisions(settings, screen, ship, nazis, bullets, sound)
+	check_bullet_nazi_collisions(settings, screen, ship, nazis, bullets)
 	
-def check_bullet_nazi_collisions(settings, screen, ship, nazis, bullets, sound):
+def check_bullet_nazi_collisions(settings, screen, ship, nazis, bullets):
 	"""Responde a colisões entre projéteis e nazis"""
 	#Remove qualquer projétil e nazi que tenham colidido
 	
 	collisions = pygame.sprite.groupcollide(bullets, nazis, True, True) 
 	
-	if len(collisions) == 0:
-		sound.set_song(2, 'sound/audio_hero_ExplosionSmall_DIGIJ02_24_351.mp3')
+	if len(collisions):
+		play_effects('sound/explosao_v2.wav')
 	
-	if len(nazis) == 0:
+	if len(nazis) <= 3:
 		"""Destrói os projéteis existentes e cria uma nova frota"""
 		bullets.empty()
-		nazis.empty()
+		#nazis.empty()
 		create_fleet(settings, screen, ship, nazis)		
 			
 def fire_bullet(settings, screen, ship, bullets, enumKey):
@@ -183,12 +189,13 @@ def get_number_rows(settings, ship_height, nazi_height):
 
 	number_rows = int(available_space_y / (4 * nazi_height))
 	return number_rows
-	
+
+"""	
 def scroll_background(screen, background, a, b):
 	
 	for i in range(4):
 		screen.blit(background[i], (a, b))
-		
+"""	
 def update_nazis(settings, stats, screen, ship, nazis, bullets):
 	"""
 	Verifica se a frota está em uma das bordas e então
@@ -242,3 +249,17 @@ def check_nazis_botton(settings, stats, screen, ship, nazis, bullets):
 			#a espaçonave é atingida
 			ship_hit(settings, stats, screen, ship, nazis, bullets)
 			break
+			
+def eternal_song(soundfile):
+	"""Play a soundfile for a configurable duration"""
+	mixer.music.load(soundfile)
+	mixer.music.play(-1)
+		
+def play_effects(soundfile):
+	"""Play a soundfile for a configurable duration"""
+	effect = pygame.mixer.Sound(soundfile)
+	effect.play(0)
+
+	
+def update_background(background):
+	background.get_rect().centery -= 1

@@ -1,4 +1,7 @@
 """Classe de configurações do jogo"""
+import random
+from random import randint
+
 class Settings():
 	"""Uma classe para armazenar todas as configurações da Invasão Alienígena"""
 	
@@ -23,12 +26,12 @@ class Settings():
 		self.bullets_allowed 			= 3
 		
 		#Configurações da nazi
-		self.nazi_speed_factor 			= 1
+		self.nazi_speed_factor 			= random.uniform(0.7,1.0)
 		
 		
-		self.fleet_drop_speed 			= 10
+		self.fleet_drop_speed 			= randint(5, 10)
 		#fleet_direction igual a 1 representa a direita; -1 representa a esquerda
-		self.fleet_direction 			= 1
+		self.fleet_direction 			= -1
 
 		
 		

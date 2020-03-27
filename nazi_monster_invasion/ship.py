@@ -27,23 +27,19 @@ class Ship():
 		self.moving_top 	= False
 		self.moving_bottom 	= False
 		
-	def update(self, background):
+	def update(self):
 		"""Atualiza a posição da espaçonave de acordo com a flag de movimento"""
 		if self.moving_right and self.rect.right < self.screen_rect.right:
 			self.center += self.ai_settings.ship_speed_factor
-			gf.scroll_background(self.screen, background, -100, 0)
 		
 		if self.moving_left and self.rect.left > 0:
 			self.center -= self.ai_settings.ship_speed_factor
-			gf.scroll_background(self.screen, background, 100, 0)
 		
 		if self.moving_top and self.rect.top > self.screen_rect.top:
 			self.rect.top -= self.ai_settings.ship_speed_factor
-			gf.scroll_background(self.screen, background, 0, 100)
 		
 		if self.moving_bottom and self.rect.bottom < self.screen_rect.bottom:
 			self.rect.top += self.ai_settings.ship_speed_factor
-			gf.scroll_background(self.screen, background, 0, -100)
 			
 		#Atualiza o objeto rect de acordo com self.center
 		self.rect.centerx = self.center
