@@ -60,6 +60,7 @@ def run_game():
 		gf.update_screen_ship(ship, bullets)
 		gf.update_screen_nazi_monster(nazis, screen)
 
+
 		gf.update_background(background)
 		#Sempre execução final
 		gf.update_screen()
