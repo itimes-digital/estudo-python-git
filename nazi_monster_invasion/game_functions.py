@@ -87,12 +87,11 @@ def event_keyup(event, ship):
 		ship.moving_bottom = False
 									
 					
-def draw_screen(screen, background, x, y):
+def draw_screen(screen, background):
 	#Redesenha a tela a cada passagem pelo laço
 	#
 	#screen.fill(settings.bg_color)
-	screen.blit(background, (x,y))
-	print(str(x) + " - " + str(y))
+	screen.blit(background, (0,0))
 	
 def update_screen():
 	#Deixa a tela mais recente visível
@@ -176,8 +175,8 @@ def create_nazi(settings, screen, nazis, nazi_number, row_number):
 	#Cria um nazi e o posiciona na linha
 	nazi 				= Nazi_Monster(settings, screen)
 	nazi_width 			= nazi.rect.width
-	nazi.x 				= nazi_width + (randint(0, 2) * nazi_width * nazi_number)
-	nazi.rect.x 		= nazi.x + 10
+	nazi.x 				= nazi_width + (2 * nazi_width * nazi_number)
+	nazi.rect.x 		= nazi.x
 	nazi.rect.y 		= nazi.rect.height + (2 * nazi.rect.height * row_number)
 	nazis.add(nazi)
 	
@@ -185,9 +184,9 @@ def create_nazi(settings, screen, nazis, nazi_number, row_number):
 def get_number_rows(settings, ship_height, nazi_height):
 	"""Determine o número de linhas com nazis que cabem na tela"""
 
-	available_space_y 	= (settings.screen_height - (4 * nazi_height) - ship_height)
+	available_space_y 	= (settings.screen_height - (3 * nazi_height) - ship_height)
 
-	number_rows = int(available_space_y / (4 * nazi_height))
+	number_rows = int(available_space_y / (2 * nazi_height))
 	return number_rows
 
 """	
@@ -259,7 +258,3 @@ def play_effects(soundfile):
 	"""Play a soundfile for a configurable duration"""
 	effect = pygame.mixer.Sound(soundfile)
 	effect.play(0)
-
-	
-def update_background(background):
-	background.get_rect().centery -= 1

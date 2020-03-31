@@ -53,15 +53,11 @@ def run_game():
 		gf.update_bullets(settings, screen, ship, nazis, bullets)
 		gf.update_nazis(settings, stats, screen, ship, nazis, bullets)
 		gf.draw_screen(screen, 
-						background, 
-						0, 
-						background.get_rect().centery)
+						background)
 		ship.update() #Atualização dos movimentos
 		gf.update_screen_ship(ship, bullets)
 		gf.update_screen_nazi_monster(nazis, screen)
 
-
-		gf.update_background(background)
 		#Sempre execução final
 		gf.update_screen()
 		

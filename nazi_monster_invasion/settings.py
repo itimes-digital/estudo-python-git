@@ -26,7 +26,7 @@ class Settings():
 		self.bullets_allowed 			= 3
 		
 		#Configurações da nazi
-		self.nazi_speed_factor 			= random.uniform(0.7,1.0)
+		self.nazi_speed_factor 			= 1.0
 		
 		
 		self.fleet_drop_speed 			= randint(5, 10)
