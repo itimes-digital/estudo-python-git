@@ -7,10 +7,8 @@ Created on Fri Apr  3 21:56:15 2020
 
 import pandas as pd
 
-base = pd.read_csv('dataset\credit_data.csv')
+base = pd.read_csv('D:/estudo-machine-learning/estudo-python/machine-learning/dataset/credit_data.csv')
 
-#ajuste de valores inconsistentes
-base.loc[base.age < 0, 'age'] = 40.92
 
 #extração de colunas 1, 2 e 3 essenciais para a análise
 previsores = base.iloc[:, 1:4].values
@@ -26,12 +24,6 @@ imputer = SimpleImputer(missing_values=np.nan, strategy='mean')# , axis=0
 imputer = imputer.fit(previsores[:, 1:4])
 previsores[:, 1:4] = imputer.transform(previsores[:, 1:4])
 
-from sklearn.preprocessing import StandardScaler
-
-#Mudar o escalonamento dos dados para calcular espaço euclidiano
-scaler = StandardScaler()
-previsores = scaler.fit_transform(previsores)
-
 
 #Gerar uma amostra de treinamento - previsores e classe
 #Gerar uma amostra de teste - previsores e classe
@@ -41,5 +33,30 @@ previsores_treinamento, previsores_teste, classe_treinamento, classe_teste = tra
                                 classe, 
                                 test_size=0.25,
                                 random_state=0)
+
+from sklearn.naive_bayes import GaussianNB
+
+classificador  = GaussianNB()
+
+#Criação de tabelas de probabilidades - tabela naive bayes
+classificador.fit(previsores_treinamento, classe_treinamento)
+
+previsoes = classificador.predict(previsores_teste)
+
+"""
+Serve para comparar algoritmos e analisar o nível de precisão do cálculo
+A sua aplicabilidade serve também para analisar quão o modelo está sendo preciso,
+isto é, efetivo, assertivo, próximo do ideal ou esperado de acordo com a classe 
+de teste.
+"""
+from sklearn.metrics import confusion_matrix, accuracy_score
+
+precisao = accuracy_score(classe_teste, previsoes)
+
+"""
+Mostra a relação de erros e acertos esperado para a quantidade de classes definidas
+Um dos meios para compreender melhor o resultado do seu modelo
+"""
+matrix = confusion_matrix(classe_teste, previsoes)
 
 
