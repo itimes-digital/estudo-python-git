@@ -1,4 +1,4 @@
-++++++++++++++++++++Machine-Learning+++++++++++++++++++++++\n
+﻿++++++++++++++++++++Machine-Learning+++++++++++++++++++++++\n
 Terminologia\n
 ######Inteligência Artificial######\n
 sistemas especialista\n
