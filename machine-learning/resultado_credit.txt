@@ -1,0 +1,6 @@
+Credit Data
+----------------------------
+
+0.9379 - Naive Bayes (inconsistentes + faltantes + escalonamento)
+0.9819 - Decision Tree (inconsistentes + faltantes + escalonamento)
+0.984 - Random Forest n_estimators = 40 (inconsistentes + faltantes + escalonamento)
