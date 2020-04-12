@@ -42,4 +42,13 @@ previsores_treinamento, previsores_teste, classe_treinamento, classe_teste = tra
                                 test_size=0.25,
                                 random_state=0)
 
+#importação da biblioteca
+#criação do classificador
+classificador.fit(previsores_treinamento, classe_treinamento)
+previsoes = classificador.predict(previsores_teste)
+
+from sklearn.metrics import confusion_matrix, accuracy_score
+precisao = accuracy_score(classe_teste, previsoes)
+matriz = confusion_matrix(classe_teste, previsoes)
+
 

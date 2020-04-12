@@ -33,8 +33,13 @@ previsores[:, 9] = labelEncoder_previsores.fit_transform(previsores[:,9])
 previsores[:, 13] = labelEncoder_previsores.fit_transform(previsores[:,13])
 
 #Criar variáveis dummy para melhor uso dos dados
-oneHotEncoder = OneHotEncoder(categorical_features=[1,3,5,6,7,8,9,13])
-previsores = oneHotEncoder.fit_transform(previsores).toarray()
+
+from sklearn.compose import ColumnTransformer
+
+column_transform = ColumnTransformer([("encoder", 
+                         OneHotEncoder(), 
+                        [1,3,5,6,7,8,9,13])],    
+                       remainder = 'passthrough')
 
 #Transforma variável categórica em números
 labelEncoder_classe = LabelEncoder()
@@ -54,5 +59,14 @@ previsores_treinamento, previsores_teste, classe_treinamento, classe_teste = tra
                                 classe, 
                                 test_size=0.15,
                                 random_state=0)
+
+#importação da biblioteca
+#criação do classificador
+classificador.fit(previsores_treinamento, classe_treinamento)
+previsoes = classificador.predict(previsores_teste)
+
+from sklearn.metrics import confusion_matrix, accuracy_score
+precisao = accuracy_score(classe_teste, previsoes)
+matriz = confusion_matrix(classe_teste, previsoes)
 
 
