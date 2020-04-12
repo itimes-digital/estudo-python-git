@@ -1,5 +1,6 @@
 Census
 ---------------------
+0.7559 - Base line Classifier
 0.4767 - Naive Bayes (labelEncoder + OneHotEncoder + Escalonamento)
 0.7952 - Naive Bayes (labelEncoder)
 0.7950 - Naive Bayes (labelEncoder + OneHotEncoder)
@@ -14,3 +15,5 @@ Census
 0.8545 - Random Forest n_estimators = 40 (labelEncoder)
 0.8545 - Random Forest n_estimators = 40 (labelEncoder + OneHotEncoder)
 0.8548 - Random Forest n_estimators = 40 (labelEncoder + Escalonamento)
+
+0.8090 - CN2 (sem pré-processamento)

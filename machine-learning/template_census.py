@@ -53,13 +53,13 @@ previsores = scaler.fit_transform(previsores)
 
 #Gerar uma amostra de treinamento - previsores e classe
 #Gerar uma amostra de teste - previsores e classe
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 #Proporção de 25%
 previsores_treinamento, previsores_teste, classe_treinamento, classe_teste = train_test_split(previsores, 
                                 classe, 
                                 test_size=0.15,
                                 random_state=0)
-
+"""
 #importação da biblioteca
 #criação do classificador
 classificador.fit(previsores_treinamento, classe_treinamento)
@@ -68,5 +68,8 @@ previsoes = classificador.predict(previsores_teste)
 from sklearn.metrics import confusion_matrix, accuracy_score
 precisao = accuracy_score(classe_teste, previsoes)
 matriz = confusion_matrix(classe_teste, previsoes)
-
-
+"""
+import collections 
+#Válido para compreender qual o percentual esperado de acuracidade e determinar
+#qual classificador é melhor para tal problema 
+print(collections.Counter(classe_teste))

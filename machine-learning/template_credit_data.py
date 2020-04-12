@@ -51,4 +51,9 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 precisao = accuracy_score(classe_teste, previsoes)
 matriz = confusion_matrix(classe_teste, previsoes)
 
+import collections 
+#Válido para compreender qual o percentual esperado de acuracidade e determinar
+#qual classificador é melhor para tal problema 
+print(collections.Counter(classe_teste))
+
 
