@@ -26,10 +26,8 @@ classificador = GaussianNB()
 classificador.fit(previsores, classe)
 
 # HITÓRIA BOA, DÍVIDA ALTA, GARANTIAS NENHUMA, RENDA > 35.000
-resultado = classificador.predict([[0, 0, 1, 2]])
-
 # HITÓRIA RUIM, DÍVIDA ALTA, GARANTIAS ADEQUADA, RENDA < 15.000
-resultado = classificador.predict([[0, 0, 1, 2], [2,0,0,0]])
+resultado = classificador.predict([[0, 0, 1, 2], [3,0,0,0]])
 
 print(classificador.classes_)
 print(classificador.class_count_)
