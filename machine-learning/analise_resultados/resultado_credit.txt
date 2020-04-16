@@ -7,3 +7,4 @@ Credit Data
 0.9840 - Random Forest n_estimators = 40 (inconsistentes + faltantes + escalonamento)
 0.9720 - CN2 (sem pré-processamento) 
 0.9860 - KNN (inconsistentes + faltantes + escalonamento)
+0.9460 - Logistics Regression (inconsistentes + faltantes + escalonamento)

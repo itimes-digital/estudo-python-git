@@ -18,7 +18,12 @@ Census
 
 0.8090 - CN2 (sem pré-processamento)
 
-0.8219 KNN 5 (labelEncoder + OneHotEncoder + Escalonamento)
+0.8219 - KNN 5 (labelEncoder + OneHotEncoder + Escalonamento)
 0.7746 - KNN 5 (labelEncoder)
 0.7746 - KNN 5 (labelEncoder + OneHotEncoder)
 0.8219 - KNN 5 (labelEncoder + Escalonamento)
+
+0.8184 - Logistics Regression (labelEncoder + OneHotEncoder + Escalonamento)
+0.7866 - Logistics Regression (labelEncoder)
+0.7866 - Logistics Regression (labelEncoder + OneHotEncoder)
+0.8184 - Logistics Regression (labelEncoder + Escalonamento)
