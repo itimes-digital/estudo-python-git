@@ -27,3 +27,10 @@ Census
 0.7866 - Logistics Regression (labelEncoder)
 0.7866 - Logistics Regression (labelEncoder + OneHotEncoder)
 0.8184 - Logistics Regression (labelEncoder + Escalonamento)
+
+*É necessário escalonamento dos dados para treinamento, porém demora muito
+0.8135 - SVM linear (labelEncoder + OneHotEncoder + Escalonamento)
+0.8462 - SVM rbf cost = 4.0 (labelEncoder + OneHotEncoder + Escalonamento)
+* - SVM (labelEncoder)
+* - SVM (labelEncoder + OneHotEncoder)
+* - SVM (labelEncoder + Escalonamento)
