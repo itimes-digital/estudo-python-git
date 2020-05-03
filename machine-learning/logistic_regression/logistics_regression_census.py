@@ -7,7 +7,7 @@ Created on Wed Apr 15 22:37:31 2020
 # -*- coding: utf-8 -*-
 import pandas as pd
 
-base = pd.read_csv('D:/estudo-machine-learning/estudo-python/machine-learning/dataset/census.csv')
+base = pd.read_csv('dataset\census.csv')
 
 #Pega todas as linhas até a coluna 13
 previsores = base.iloc[:, 0:14].values
