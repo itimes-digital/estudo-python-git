@@ -35,8 +35,13 @@ Census
 * - SVM (labelEncoder + OneHotEncoder)
 * - SVM (labelEncoder + Escalonamento)
 
-0.8438 - Multi-Layer Preceptron (labelEncoder + OneHotEncoder + Escalonamento)
-0.8065 - Multi-Layer Preceptron (labelEncoder)
-0.6061 - Multi-Layer Preceptron (labelEncoder + OneHotEncoder)
-0.8431 - Multi-Layer Preceptron (labelEncoder + Escalonamento)
+0.8438 - Multi-Layer Preceptron scikit-learn (labelEncoder + OneHotEncoder + Escalonamento)
+0.8065 - Multi-Layer Preceptron scikit-learn (labelEncoder)
+0.6061 - Multi-Layer Preceptron scikit-learn (labelEncoder + OneHotEncoder)
+0.8431 - Multi-Layer Preceptron scikit-learn (labelEncoder + Escalonamento)
+
+0.8214 - Neural Network Keras (labelEncoder + OneHotEncoder + Escalonamento)
+0.7561 - Neural Network Keras (labelEncoder)
+0.7559 - Neural Network Keras (labelEncoder + OneHotEncoder)
+0.8417 - Neural Network Keras (labelEncoder + Escalonamento)
 

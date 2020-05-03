@@ -9,4 +9,5 @@ Credit Data
 0.9860 - KNN (inconsistentes + faltantes + escalonamento)
 0.9460 - Logistics Regression (inconsistentes + faltantes + escalonamento)
 0.9880 - SVM Kernel rbf cost = 2.0 (inconsistentes + faltantes + escalonamento)
-0.9960 - Multi-Layer Perceptron (inconsistentes + faltantes + escalonamento)
+0.9960 - Multi-Layer Perceptron scikit-learning (inconsistentes + faltantes + escalonamento)
+0.9960 - Neural Network Keras (inconsistentes + faltantes + escalonamento)
