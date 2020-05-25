@@ -875,7 +875,7 @@
 886;Bulletproof ;1996;Action
 887;Talk of Angels ;1998;Drama
 888;Land Before Time III: The Time of the Great Giving ;1995;Animation|Children's
-889:;1-900 ;1994;Romance
+889;1-900 ;1994;Romance
 890;Baton Rouge ;1988;Thriller
 891;Halloween: The Curse of Michael Myers ;1995;Horror|Thriller
 892;Twelfth Night ;1996;Comedy|Drama|Romance
@@ -910,7 +910,7 @@
 921;My Favorite Year ;1982;Comedy
 922;Sunset Blvd. a.k.a. Sunset Boulevard;1950;Film-Noir
 923;Citizen Kane ;1941;Drama
-924:;2001: A Space Odyssey ;1968;Drama|Mystery|Sci-Fi|Thriller
+924;2001: A Space Odyssey ;1968;Drama|Mystery|Sci-Fi|Thriller
 925;Golden Earrings ;1947;Adventure|Romance
 926;All About Eve ;1950;Drama
 927;Women, The ;1939;Comedy
@@ -984,9 +984,9 @@
 996;Last Man Standing ;1996;Action|Drama|Western
 997;Caught ;1996;Drama|Thriller
 998;Set It Off ;1996;Action|Crime
-999:;2 Days in the Valley ;1996;Crime
+999;2 Days in the Valley ;1996;Crime
 1000;Curdled ;1996;Crime
-1001;Associate, The L'Associe::;1982;Comedy
+1001;Associate, The L'Associe;1982;Comedy
 1002;Ed's Next Move ;1996;Comedy
 1003;Extreme Measures ;1996;Drama|Thriller
 1004;Glimmer Man, The ;1996;Action|Thriller
@@ -1004,7 +1004,7 @@
 1016;Shaggy Dog, The ;1959;Children's|Comedy
 1017;Swiss Family Robinson ;1960;Adventure|Children's
 1018;That Darn Cat! ;1965;Children's|Comedy|Mystery
-1019:;20,000 Leagues Under the Sea ;1954;Adventure|Children's|Fantasy|Sci-Fi
+1019;20,000 Leagues Under the Sea ;1954;Adventure|Children's|Fantasy|Sci-Fi
 1020;Cool Runnings ;1993;Comedy
 1021;Angels in the Outfield ;1994;Children's|Comedy
 1022;Cinderella ;1950;Animation|Children's|Musical
@@ -1183,7 +1183,7 @@
 1200;Aliens ;1986;Action|Sci-Fi|Thriller|War
 1201;Good, The Bad and The Ugly, The ;1966;Action|Western
 1202;Withnail and I ;1987;Comedy
-1203:;12 Angry Men ;1957;Drama
+1203;12 Angry Men ;1957;Drama
 1204;Lawrence of Arabia ;1962;Adventure|War
 1205;Transformers: The Movie, The ;1986;Action|Animation|Children's|Sci-Fi|Thriller|War
 1206;Clockwork Orange, A ;1971;Sci-Fi
@@ -1344,7 +1344,7 @@
 1364;Zero Kelvin Kjærlighetens kjøtere;1995;Action
 1365;Ridicule ;1996;Drama
 1366;Crucible, The ;1996;Drama
-1367:;101 Dalmatians ;1996;Children's|Comedy
+1367;101 Dalmatians ;1996;Children's|Comedy
 1368;Forbidden Christ, The Cristo proibito, Il;1950;Drama
 1369;I Can't Sleep J'ai pas sommeil;1994;Drama|Thriller
 1370;Die Hard 2 ;1990;Action|Thriller
@@ -1565,7 +1565,7 @@
 1605;Excess Baggage ;1997;Adventure|Romance
 1606;Kull the Conqueror ;1997;Action|Adventure
 1608;Air Force One ;1997;Action|Thriller
-1609:;187 ;1997;Drama
+1609;187 ;1997;Drama
 1610;Hunt for Red October, The ;1990;Action|Thriller
 1611;My Own Private Idaho ;1991;Drama
 1612;Kiss Me, Guido ;1997;Comedy
@@ -1948,7 +1948,7 @@
 2016;Apple Dumpling Gang Rides Again, The ;1979;Children's|Comedy|Western
 2017;Babes in Toyland ;1961;Children's|Fantasy|Musical
 2018;Bambi ;1942;Animation|Children's
-2019;Seven Samurai The Magnificent Seven::Shichinin no samurai;1954;Action|Drama
+2019;Seven Samurai The Magnificent Seven (Shichinin no samurai);1954;Action|Drama
 2020;Dangerous Liaisons ;1988;Drama|Romance
 2021;Dune ;1984;Fantasy|Sci-Fi
 2022;Last Temptation of Christ, The ;1988;Drama
@@ -2014,7 +2014,7 @@
 2082;Mighty Ducks, The ;1992;Children's|Comedy
 2083;Muppet Christmas Carol, The ;1992;Children's|Musical
 2084;Newsies ;1992;Children's|Musical
-2085:;101 Dalmatians ;1961;Animation|Children's
+2085;101 Dalmatians ;1961;Animation|Children's
 2086;One Magic Christmas ;1985;Drama|Fantasy
 2087;Peter Pan ;1953;Animation|Children's|Fantasy|Musical
 2088;Popeye ;1980;Adventure|Comedy|Musical
@@ -2240,7 +2240,7 @@
 2308;Detroit 9000 ;1973;Action|Crime
 2309;Inheritors, The Die Siebtelbauern;1998;Drama
 2310;Mighty, The ;1998;Drama
-2311:;2010 ;1984;Mystery|Sci-Fi
+2311;2010 ;1984;Mystery|Sci-Fi
 2312;Children of a Lesser God ;1986;Drama
 2313;Elephant Man, The ;1980;Drama
 2314;Beloved ;1998;Drama
@@ -2373,7 +2373,7 @@
 2441;Hi-Lo Country, The ;1998;Drama|Western
 2442;Hilary and Jackie ;1998;Drama
 2443;Playing by Heart ;1998;Drama|Romance
-2444:;24 7: Twenty Four Seven ;1997;Comedy|Drama
+2444;24 7: Twenty Four Seven ;1997;Comedy|Drama
 2445;At First Sight ;1999;Drama
 2446;In Dreams ;1999;Thriller
 2447;Varsity Blues ;1999;Comedy|Drama
@@ -2415,13 +2415,13 @@
 2483;Day of the Beast, The El Día de la bestia;1995;Comedy|Horror|Thriller
 2484;Tinseltown ;1998;Comedy
 2485;She's All That ;1999;Comedy|Romance
-2486:;24-hour Woman ;1998;Drama
+2486;24-hour Woman ;1998;Drama
 2487;Blood, Guts, Bullets and Octane ;1998;Action|Comedy
 2488;Peeping Tom ;1960;Drama|Horror|Thriller
 2489;Spanish Fly ;1998;Drama
 2490;Payback ;1999;Action|Thriller
 2491;Simply Irresistible ;1999;Comedy|Romance
-2492:;20 Dates ;1998;Comedy
+2492;20 Dates ;1998;Comedy
 2493;Harmonists, The ;1997;Drama
 2494;Last Days, The ;1998;Documentary
 2495;Fantastic Planet, The La Planète sauvage;1973;Animation|Sci-Fi
@@ -2433,7 +2433,7 @@
 2501;October Sky ;1999;Drama
 2502;Office Space ;1999;Comedy|Romance
 2503;Apple, The Sib;1998;Drama
-2504:;200 Cigarettes ;1999;Comedy|Drama
+2504;200 Cigarettes ;1999;Comedy|Drama
 2505;8MM ;1999;Thriller
 2506;Other Sister, The ;1999;Comedy|Drama|Romance
 2507;Breakfast of Champions ;1999;Comedy
@@ -2501,7 +2501,7 @@
 2569;Among Giants ;1998;Drama|Romance
 2570;Walk on the Moon, A ;1999;Drama|Romance
 2571;Matrix, The ;1999;Action|Sci-Fi|Thriller
-2572:;10 Things I Hate About You ;1999;Comedy|Romance
+2572;10 Things I Hate About You ;1999;Comedy|Romance
 2573;Tango ;1998;Drama
 2574;Out-of-Towners, The ;1999;Comedy
 2575;Dreamlife of Angels, The La Vie rêvée des anges;1998;Drama
@@ -2755,7 +2755,7 @@
 2823;Spiders, The Die Spinnen, 1. Teil: Der Goldene See;1919;Action|Drama
 2824;On the Ropes ;1999;Documentary
 2825;Rosie ;1998;Drama
-2826:;13th Warrior, The ;1999;Action|Horror|Thriller
+2826;13th Warrior, The ;1999;Action|Horror|Thriller
 2827;Astronaut's Wife, The ;1999;Sci-Fi|Thriller
 2828;Dudley Do-Right ;1999;Children's|Comedy
 2829;Muse, The ;1999;Comedy|Drama
@@ -3463,7 +3463,7 @@
 3531;All the Vermeers in New York ;1990;Comedy|Drama|Romance
 3532;Freedom for Us À nous la liberté ;1931;Comedy
 3533;Actor's Revenge, An Yukinojo Henge;1963;Drama
-3534:;28 Days ;2000;Comedy
+3534;28 Days ;2000;Comedy
 3535;American Psycho ;2000;Comedy|Horror|Thriller
 3536;Keeping the Faith ;2000;Comedy|Romance
 3537;Where the Money Is ;2000;Comedy|Drama
