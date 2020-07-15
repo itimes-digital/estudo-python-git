@@ -8,10 +8,10 @@ import pandas as pd
 
 base = pd.read_csv('dataset/house_price.csv')
 
-# Variável dependente
+# Variável independente
 X = base.iloc[:, 3:19].values
 
-# Variável independente
+# Variável dependente
 Y = base.iloc[:, 2].values
 
 from sklearn.model_selection import train_test_split
